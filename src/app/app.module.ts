@@ -4,17 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import {MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
