@@ -1,2 +1,3 @@
-<course-header [t] = "title"></course-header>
-<course-sidebar></course-sidebar>
+<course-header [t] = "title" [d]="drawer" ></course-header>
+<!--$event - здесь это MatDrawer - то, что прилетело в потоке EventEmitter-->
+<course-sidebar (setSidebarEmitter)="setSidebar($event)"></course-sidebar>
