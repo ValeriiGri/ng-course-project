@@ -19,6 +19,12 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // -> эмиттим наверх(в хост-элемент <course-sidebar>) MatDrawer
+    // -> срабатывает событие setSidebarEmitter и вызывается ф-ция setSidebar
+    // -> кладём MatDrawer в переменную drawer
+    // -> в хост-элемент course-header засылаем drawer, оттуда в компонент header - d
+    // ---------------------------------------------------------------------------------до этого момента всё происходит потому-что в ngOnInit тут
+    // и при клике на кнопку ф-ция toggleSidebar() открывает/закрывает MatDrawer
       this.setSidebarEmitter.emit(this.drawer);
   }
 
