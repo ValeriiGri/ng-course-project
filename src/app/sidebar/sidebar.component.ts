@@ -10,7 +10,8 @@ export class SidebarComponent implements OnInit {
 
   // setSidebarEmitter - кастомное событие, поток наверх(в хост-элемент <course-sidebar>), внутри него - MatDrawer,
   @Output()
-  public setSidebarEmitter: EventEmitter<MatDrawer> = new EventEmitter<MatDrawer>();
+  public setSidebarEmitter: EventEmitter<MatDrawer> = new EventEmitter<MatDrawer>(true); // если не поставить
+                                    // true - будет ошибка в консоли типа "сначала переменная undefined, а потом  ..."
 
   // найди в шаблоне (view) элемент с #drawer
   @ViewChild('drawer', {static: true})// true - будет выполняться в ngOnInit, false - в ngAfter...
