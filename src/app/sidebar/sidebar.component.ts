@@ -1,4 +1,12 @@
-import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component,
+        ContentChild,
+        EventEmitter,
+        OnInit,
+        Output,
+        TemplateRef,
+        ViewChild,
+        AfterContentInit,
+        AfterViewInit} from '@angular/core';
 import {MatDrawer} from '@angular/material';
 
 @Component({
@@ -14,12 +22,14 @@ export class SidebarComponent implements OnInit {
                                     // true - будет ошибка в консоли типа "сначала переменная undefined, а потом  ..."
 
   // найди в шаблоне (view) элемент с #drawer
-  @ViewChild('drawer', {static: true})// true - будет выполняться в ngOnInit, false - в ngAfter...
+  @ViewChild('drawer', {static: true})// true - будет выполняться в ngOnInit,
+                                      // false - в ngAfterContentInit,ngAfterViewInit
   public drawer: MatDrawer;
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
+    //console.log('myContentThis', this.myContentThis);
     // -> эмиттим наверх(в хост-элемент <course-sidebar>) MatDrawer
     // -> срабатывает событие setSidebarEmitter и вызывается ф-ция setSidebar
     // -> кладём MatDrawer в переменную drawer
