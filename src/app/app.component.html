@@ -2,8 +2,16 @@
 <!--$event - здесь это MatDrawer - то, что прилетело в потоке EventEmitter-->
 <course-sidebar (setSidebarEmitter)="setSidebar($event)">
 
-    <pre>
-        {{products$ | async | json}}
-    </pre>
+    <div *ngIf="products$ | async as products; else loader">
+        <div *ngFor="let product of products">
+            {{product.title}}
+        </div>
+    </div>
+
+    <ng-template #loader>
+       <div class="loader-spin">
+           <mat-spinner></mat-spinner>
+       </div>
+    </ng-template>
 
 </course-sidebar>
