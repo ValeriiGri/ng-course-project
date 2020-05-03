@@ -2,11 +2,11 @@
 <!--$event - здесь это MatDrawer - то, что прилетело в потоке EventEmitter-->
 <course-sidebar (setSidebarEmitter)="setSidebar($event)">
 
-    <div *ngIf="products$ | async as products; else loader">
-        <div *ngFor="let product of products">
-            {{product.title}}
-        </div>
-    </div>
+    <!--ng-container вместо дивов - и нет кучи дивов из-за ngFor-->
+    <ng-container *ngIf="products$ | async as products; else loader">
+        <course-product-card *ngFor="let product of products; odd as isOdd" [product]="product" [isOdd]="isOdd">
+        </course-product-card>
+    </ng-container>
 
     <ng-template #loader>
        <div class="loader-spin">
