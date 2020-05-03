@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-    MatButtonModule, MatCardModule,
+    MatButtonModule, MatCardModule, MatGridListModule, MatGridTile,
     MatIconModule,
     MatListModule,
     MatProgressSpinnerModule,
@@ -21,6 +21,7 @@ import {
     MatIconModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatGridListModule,
   ]
 })
 
