@@ -3,8 +3,11 @@
 <course-sidebar (setSidebarEmitter)="setSidebar($event)">
 
     <!--ng-container вместо дивов - и нет кучи дивов из-за ngFor-->
+    <mat-form-field class="padding-left-16px">
+        <input matInput placeholder="search items" #searchEl>
+    </mat-form-field>
     <mat-grid-list cols = "4" rowHeight = "500" *ngIf="products$ | async as products; else loader">
-        <mat-grid-tile *ngFor = "let product of products; odd as isOdd">
+        <mat-grid-tile *ngFor = "let product of products | productsFilter: searchEl.value; odd as isOdd">
             <course-product-card  [product] = "product" [isOdd] = "isOdd">
             </course-product-card>
         </mat-grid-tile>
