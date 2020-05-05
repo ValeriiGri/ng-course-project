@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDrawer } from '@angular/material';
 import {IProduct, products$} from './mock';
-import {Observable} from "rxjs";
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'course-root',
