@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDrawer } from '@angular/material';
+import { MatDrawer } from '@angular/material/sidenav';
 import {IProduct, products$} from './mock';
 import {Observable} from 'rxjs';
 

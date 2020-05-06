@@ -7,7 +7,7 @@ import {Component,
         ViewChild,
         AfterContentInit,
         AfterViewInit} from '@angular/core';
-import {MatDrawer} from '@angular/material';
+import {MatDrawer} from '@angular/material/sidenav';
 
 @Component({
   selector: 'course-sidebar',
@@ -29,7 +29,7 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   public ngOnInit() {
-    //console.log('myContentThis', this.myContentThis);
+    // console.log('myContentThis', this.myContentThis);
     // -> эмиттим наверх(в хост-элемент <course-sidebar>) MatDrawer
     // -> срабатывает событие setSidebarEmitter и вызывается ф-ция setSidebar
     // -> кладём MatDrawer в переменную drawer
